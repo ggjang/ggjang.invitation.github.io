@@ -5,8 +5,8 @@ import './App.css'
 const INFO = {
   groomName: '장경권',
   brideName: '이지우',
-  groomFamily: '장경권의 아들',
-  brideFamily: '이지우의 딸',
+  groomFamily: '장영수 · 김영옥의 아들',
+  brideFamily: '이한구 · 고윤옥의 딸',
   date: '2027년 01월 23일 토요일',
   time: '오전 11시 50분',
   venue: '천안 비렌티 매그넘홀',
