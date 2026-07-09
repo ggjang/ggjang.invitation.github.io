@@ -3,18 +3,31 @@ import './App.css'
 
 // ── 여기를 수정하세요 ──────────────────────────────────────────
 const INFO = {
-  groomName: '장경권',      // 신랑 이름
-  brideName: '이지우',      // 신부 이름
+  groomName: '장경권',
+  brideName: '이지우',
   groomFamily: '장경권의 아들',
   brideFamily: '이지우의 딸',
   date: '2027년 01월 23일 토요일',
-  time: '오후 00시 00분',
-  venue: '장소명',
-  address: '서울특별시 ○○구 ○○로 00',
+  time: '오전 11시 50분',
+  venue: '천안 비렌티 매그넘홀',
+  venueSub: '본관 3층',
+  address: '충남 천안시 서북구 천안대로 1198-30',
   groomContact: '010-0000-0000',
   brideContact: '010-0000-0000',
-  kakaoMapUrl: '',          // 카카오맵 공유 URL (선택)
 }
+
+const SHUTTLE = [
+  {
+    stop: '천안고속버스터미널',
+    desc: '신세계백화점(아라리오광장) 옆 올리브영·스타벅스 건물 앞',
+    times: ['10:50', '11:20'],
+  },
+  {
+    stop: '두정역 1번출구',
+    desc: '출구에서 오른쪽 50m 파란색 셔틀버스 승강장',
+    times: ['10:55', '11:25'],
+  },
+]
 // ─────────────────────────────────────────────────────────────
 
 function useInView(threshold = 0.15) {
@@ -111,16 +124,48 @@ export default function App() {
           <li>
             <span className="detail-icon">📍</span>
             <span>
-              {INFO.venue}<br />
+              {INFO.venue} <small className="venue-sub">{INFO.venueSub}</small><br />
               <small>{INFO.address}</small>
             </span>
           </li>
         </ul>
-        {INFO.kakaoMapUrl && (
-          <a className="map-btn" href={INFO.kakaoMapUrl} target="_blank" rel="noopener noreferrer">
-            지도 보기
-          </a>
-        )}
+
+        {/* 지도 */}
+        <div className="map-wrap">
+          <iframe
+            title="웨딩홀 위치"
+            src="https://maps.google.com/maps?q=충남+천안시+서북구+천안대로+1198-30+비렌티&output=embed&hl=ko&z=15"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+        <a
+          className="map-btn"
+          href="https://map.kakao.com/link/search/천안비렌티웨딩"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          카카오맵으로 보기
+        </a>
+      </Section>
+
+      {/* ── SHUTTLE ── */}
+      <Section className="shuttle">
+        <h2 className="section-title">셔틀버스 안내</h2>
+        <p className="shuttle-note">예식 1시간 전부터 30분 간격 운행</p>
+        <div className="shuttle-list">
+          {SHUTTLE.map((s) => (
+            <div key={s.stop} className="shuttle-card">
+              <p className="shuttle-stop">🚌 {s.stop}</p>
+              <p className="shuttle-desc">{s.desc}</p>
+              <div className="shuttle-times">
+                {s.times.map((t) => (
+                  <span key={t} className="shuttle-time">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </Section>
 
       {/* ── CONTACT ── */}
