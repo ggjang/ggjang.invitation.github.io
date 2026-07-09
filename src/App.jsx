@@ -188,14 +188,14 @@ export default function App() {
               loading="lazy"
             />
           </div>
-          <a
-            className="map-btn"
-            href="https://map.kakao.com/link/search/천안비렌티웨딩"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            카카오맵으로 보기
-          </a>
+          <div className="map-btn-row">
+            <a className="map-btn" href="https://map.kakao.com/link/search/천안비렌티웨딩" target="_blank" rel="noopener noreferrer">
+              카카오맵
+            </a>
+            <a className="map-btn" href="https://map.naver.com/p/search/천안%20비렌티%20웨딩홀" target="_blank" rel="noopener noreferrer">
+              네이버맵
+            </a>
+          </div>
         </div>
       </Section>
 

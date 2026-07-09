@@ -216,11 +216,16 @@
 }
 .map-wrap iframe { width: 100%; height: 100%; border: 0; }
 
-.map-btn {
-  display: block;
+.map-btn-row {
+  display: flex;
+  gap: 0.6rem;
   margin-top: 1rem;
+}
+
+.map-btn {
+  flex: 1;
   text-align: center;
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 1rem;
   background: var(--surface2);
   border: 1px solid var(--divider);
   border-radius: 980px;
