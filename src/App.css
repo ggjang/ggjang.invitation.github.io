@@ -249,6 +249,29 @@
   font-family: var(--font-serif);
 }
 
+/* ── GALLERY ── */
+.gallery { background: var(--color-bg); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.gallery-placeholder {
+  aspect-ratio: 1;
+  background: var(--color-divider);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border-radius: 4px;
+  color: var(--color-muted);
+}
+
+/* 실제 이미지로 교체 시: */
+/* .gallery-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; } */
+
 /* ── FOOTER ── */
 .footer {
   padding: 3rem 2rem;

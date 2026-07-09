@@ -168,6 +168,19 @@ export default function App() {
         </div>
       </Section>
 
+      {/* ── GALLERY ── */}
+      {/* 사진 추가: src/assets/ 에 이미지 넣고 아래 배열에 import 경로 추가 */}
+      <Section className="gallery">
+        <h2 className="section-title">갤러리</h2>
+        <div className="gallery-grid">
+          {[1, 2, 3, 4, 5, 6].map((n) => (
+            <div key={n} className="gallery-placeholder">
+              <span>📷</span>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* ── CONTACT ── */}
       <Section className="contact">
         <h2 className="section-title">마음 전하기</h2>
