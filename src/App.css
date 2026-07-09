@@ -1,0 +1,196 @@
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--color-bg);
+}
+
+.hero-inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+
+.hero-eyebrow {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.hero-names {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 10vw, 3.6rem);
+  font-weight: 300;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  color: var(--color-text);
+}
+
+.hero-amp {
+  font-size: 0.7em;
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.hero-date {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+}
+
+/* ── COUNTDOWN ── */
+.countdown {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+.countdown-num {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--color-accent);
+  line-height: 1;
+}
+.countdown-label { font-size: 0.9rem; color: var(--color-muted); }
+
+/* ── SECTION BASE ── */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.section.visible { opacity: 1; transform: translateY(0); }
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  width: fit-content;
+  color: var(--color-accent);
+  font-size: 0.7rem;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--color-divider);
+}
+
+/* ── INVITE ── */
+.invite { background: #fff; }
+
+.invite-text {
+  font-size: 0.95rem;
+  line-height: 2;
+  color: #444;
+}
+
+.family-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+.family-info strong { color: var(--color-text); font-weight: 400; }
+
+/* ── DETAILS ── */
+.details { background: var(--color-bg); }
+
+.details-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.details-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+.detail-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+.map-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.6rem 1.8rem;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  transition: background 0.2s, color 0.2s;
+  border-radius: 2px;
+}
+.map-btn:hover { background: var(--color-accent); color: #fff; }
+
+/* ── CONTACT ── */
+.contact { background: #fff; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1.5rem 1rem;
+  border: 1px solid var(--color-divider);
+  border-radius: 4px;
+}
+
+.contact-role { font-size: 0.75rem; color: var(--color-muted); letter-spacing: 0.1em; }
+.contact-name { font-size: 1rem; color: var(--color-text); }
+.contact-tel {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.contact-tel:hover { border-color: var(--color-accent); }
+
+/* ── FOOTER ── */
+.footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-divider);
+}
+.footer-date { margin-top: 0.3rem; }
