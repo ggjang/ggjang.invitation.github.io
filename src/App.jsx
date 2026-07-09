@@ -133,10 +133,17 @@ export default function App() {
       {/* ── HERO ── */}
       <section className="hero">
         <div className="hero-inner fade-up">
-          <p className="hero-eyebrow">{INFO.groomName} &amp; {INFO.brideName} 결혼식</p>
+          <p className="hero-eyebrow">We are getting married</p>
+          <h1 className="hero-names">
+            <span>{INFO.groomName}</span>
+            <span className="hero-amp">&</span>
+            <span>{INFO.brideName}</span>
+          </h1>
           <Countdown dateStr="2027-01-23" />
-          <p className="hero-date">{INFO.date} {INFO.time}</p>
-          <p className="hero-venue">{INFO.venue}</p>
+          <div className="hero-date-block">
+            <p className="hero-date">{INFO.date}</p>
+            <p className="hero-time">{INFO.time} · {INFO.venue}</p>
+          </div>
         </div>
       </section>
 
