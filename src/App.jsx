@@ -3,11 +3,11 @@ import './App.css'
 
 // ── 여기를 수정하세요 ──────────────────────────────────────────
 const INFO = {
-  groomName: '홍길동',      // 신랑 이름
-  brideName: '김순이',      // 신부 이름
-  groomFamily: '홍길동의 아들',
-  brideFamily: '김순이의 딸',
-  date: '2026년 00월 00일 토요일',
+  groomName: '장경권',      // 신랑 이름
+  brideName: '이지우',      // 신부 이름
+  groomFamily: '장경권의 아들',
+  brideFamily: '이지우의 딸',
+  date: '2027년 01월 23일 토요일',
   time: '오후 00시 00분',
   venue: '장소명',
   address: '서울특별시 ○○구 ○○로 00',
@@ -80,7 +80,7 @@ export default function App() {
             <span>{INFO.brideName}</span>
           </h1>
           <p className="hero-date">{INFO.date}</p>
-          <Countdown dateStr="2026-01-01" />
+          <Countdown dateStr="2027-01-23" />
         </div>
       </section>
 
