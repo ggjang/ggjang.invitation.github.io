@@ -53,6 +53,26 @@ function Section({ className = '', children }) {
   )
 }
 
+function Lightbox({ src, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [onClose])
+
+  return (
+    <div className="lightbox-overlay" onClick={onClose} role="dialog" aria-modal="true">
+      <div className="lightbox-inner" onClick={(e) => e.stopPropagation()}>
+        {src
+          ? <img src={src} alt="사진 크게 보기" className="lightbox-img" />
+          : <div className="lightbox-placeholder"><span>📷</span></div>
+        }
+        <button className="lightbox-close" onClick={onClose} aria-label="닫기">✕</button>
+      </div>
+    </div>
+  )
+}
+
 function BotanicalCorner({ className }) {
   return (
     <svg className={`botanical ${className}`} viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,6 +120,33 @@ function Countdown({ dateStr }) {
       <span className="countdown-num">{days}</span>
       <span className="countdown-label">일 후</span>
     </div>
+  )
+}
+
+// photos 배열에 실제 이미지 추가: import p1 from './assets/photo1.jpg' 후 [p1, p2, ...]
+const photos = []
+
+function GallerySection() {
+  const [selected, setSelected] = useState(null)
+  const items = photos.length > 0 ? photos : Array(6).fill(null)
+
+  return (
+    <Section className="gallery">
+      <h2 className="section-title">갤러리</h2>
+      <div className="gallery-grid">
+        {items.map((src, i) => (
+          <button key={i} className="gallery-item" onClick={() => setSelected({ src, i })}>
+            {src
+              ? <img src={src} alt={`사진 ${i + 1}`} />
+              : <span>📷</span>
+            }
+          </button>
+        ))}
+      </div>
+      {selected !== null && (
+        <Lightbox src={selected.src} onClose={() => setSelected(null)} />
+      )}
+    </Section>
   )
 }
 
@@ -197,17 +244,8 @@ export default function App() {
       </Section>
 
       {/* ── GALLERY ── */}
-      {/* 사진 추가: src/assets/ 에 이미지 넣고 아래 배열에 import 경로 추가 */}
-      <Section className="gallery">
-        <h2 className="section-title">갤러리</h2>
-        <div className="gallery-grid">
-          {[1, 2, 3, 4, 5, 6].map((n) => (
-            <div key={n} className="gallery-placeholder">
-              <span>📷</span>
-            </div>
-          ))}
-        </div>
-      </Section>
+      {/* 사진 추가: src/assets/ 에 이미지 넣고 photos 배열에 import 경로 추가 */}
+      <GallerySection />
 
       {/* ── CONTACT ── */}
       <Section className="contact">
