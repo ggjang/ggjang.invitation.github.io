@@ -13,7 +13,21 @@
   text-align: center;
   padding: 4rem 2rem;
   background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
 }
+
+.botanical {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  opacity: 0.65;
+  pointer-events: none;
+}
+.botanical.top-left     { top: 0; left: 0;  transform: rotate(180deg); }
+.botanical.top-right    { top: 0; right: 0; transform: scaleX(-1); }
+.botanical.bottom-left  { bottom: 0; left: 0;  transform: scaleY(-1); }
+.botanical.bottom-right { bottom: 0; right: 0; }
 
 .hero-inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
 

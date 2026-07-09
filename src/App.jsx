@@ -53,6 +53,30 @@ function Section({ className = '', children }) {
   )
 }
 
+function BotanicalCorner({ className }) {
+  return (
+    <svg className={`botanical ${className}`} viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* main stem */}
+      <path d="M 125 5 C 95 35 65 65 18 118" stroke="#c4a882" strokeWidth="0.9"/>
+      {/* leaf 1 — upper */}
+      <path d="M 98 28 C 114 12 122 32 104 37 C 91 29 98 28 Z" stroke="#c4a882" strokeWidth="0.7" fill="#c4a882" fillOpacity="0.1"/>
+      {/* leaf 2 — mid */}
+      <path d="M 65 62 C 80 45 88 65 70 70 C 58 63 65 62 Z" stroke="#c4a882" strokeWidth="0.7" fill="#c4a882" fillOpacity="0.1"/>
+      {/* leaf 3 — lower */}
+      <path d="M 36 94 C 22 81 26 98 40 97 C 42 90 36 94 Z" stroke="#c4a882" strokeWidth="0.6" fill="#c4a882" fillOpacity="0.1"/>
+      {/* flower at tip */}
+      <circle cx="18" cy="118" r="5" stroke="#c4a882" strokeWidth="0.7"/>
+      <circle cx="18" cy="111" r="3.5" stroke="#c4a882" strokeWidth="0.5" fill="#c4a882" fillOpacity="0.12"/>
+      <circle cx="12" cy="115" r="3.5" stroke="#c4a882" strokeWidth="0.5" fill="#c4a882" fillOpacity="0.12"/>
+      <circle cx="24" cy="115" r="3.5" stroke="#c4a882" strokeWidth="0.5" fill="#c4a882" fillOpacity="0.12"/>
+      <circle cx="18" cy="125" r="3.5" stroke="#c4a882" strokeWidth="0.5" fill="#c4a882" fillOpacity="0.12"/>
+      {/* small berries */}
+      <circle cx="110" cy="12" r="3" stroke="#c4a882" strokeWidth="0.6" fill="#c4a882" fillOpacity="0.18"/>
+      <circle cx="120" cy="18" r="2" stroke="#c4a882" strokeWidth="0.5" fill="#c4a882" fillOpacity="0.18"/>
+    </svg>
+  )
+}
+
 function Divider() {
   return <div className="divider"><span>✦</span></div>
 }
@@ -85,6 +109,10 @@ export default function App() {
 
       {/* ── HERO ── */}
       <section className="hero">
+        <BotanicalCorner className="top-left" />
+        <BotanicalCorner className="top-right" />
+        <BotanicalCorner className="bottom-left" />
+        <BotanicalCorner className="bottom-right" />
         <div className="hero-inner fade-up">
           <p className="hero-eyebrow">We're getting married</p>
           <h1 className="hero-names">
