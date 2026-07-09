@@ -93,8 +93,8 @@ function Countdown({ dateStr }) {
   if (days === null) return null
   return (
     <div className="countdown">
+      <span className="countdown-prefix">D-</span>
       <span className="countdown-num">{days}</span>
-      <span className="countdown-label">일 후</span>
     </div>
   )
 }
@@ -133,14 +133,10 @@ export default function App() {
       {/* ── HERO ── */}
       <section className="hero">
         <div className="hero-inner fade-up">
-          <p className="hero-eyebrow">We're getting married</p>
-          <h1 className="hero-names">
-            <span>{INFO.groomName}</span>
-            <span className="hero-amp">&amp;</span>
-            <span>{INFO.brideName}</span>
-          </h1>
-          <p className="hero-date">{INFO.date}</p>
+          <p className="hero-eyebrow">{INFO.groomName} &amp; {INFO.brideName} 결혼식</p>
           <Countdown dateStr="2027-01-23" />
+          <p className="hero-date">{INFO.date} {INFO.time}</p>
+          <p className="hero-venue">{INFO.venue}</p>
         </div>
       </section>
 
