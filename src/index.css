@@ -5,33 +5,31 @@
 }
 
 :root {
-  --color-bg: #fdfcfb;
-  --color-text: #1a1a1a;
-  --color-muted: #888;
-  --color-accent: #b8976a;
-  --color-divider: #e8e0d8;
-  --font-serif: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
-  --font-korean: 'Noto Serif KR', 'Cormorant Garamond', serif;
+  --bg: #000;
+  --surface: #111;
+  --surface2: #1d1d1f;
+  --text: #f5f5f7;
+  --muted: #86868b;
+  --divider: #2d2d2f;
+  --accent-from: #e8d5b7;
+  --accent-to: #c4a882;
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-korean);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(32px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.fade-up {
-  animation: fadeUp 0.9s ease both;
-}
+.fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both; }
