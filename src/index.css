@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Dancing+Script:wght@600;700&display=swap');
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -5,31 +7,46 @@
 }
 
 :root {
-  --bg: #000;
-  --surface: #111;
-  --surface2: #1d1d1f;
-  --text: #f5f5f7;
-  --muted: #86868b;
-  --divider: #2d2d2f;
-  --accent-from: #e8d5b7;
-  --accent-to: #c4a882;
-  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  --bg: #fdf9f4;
+  --surface: #fffcf9;
+  --surface2: #fff4ef;
+  --text: #3d2b1f;
+  --muted: #9b7f6e;
+  --divider: #f0d8cc;
+  --pink: #f4a7b9;
+  --pink-deep: #e07090;
+  --sky: #add8f0;
+  --green: #b8d9b5;
+  --gold: #e8c56c;
+  --rose: #c4536a;
+  --font: 'Nanum Myeongjo', Georgia, 'Times New Roman', serif;
+  --font-script: 'Dancing Script', cursive;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(244, 167, 185, 0.12), transparent 26rem),
+    radial-gradient(circle at 82% 66%, rgba(173, 216, 240, 0.12), transparent 30rem),
+    #ece8e0;
   color: var(--text);
   font-family: var(--font);
-  font-weight: 300;
-  line-height: 1.7;
+  font-weight: 400;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(32px); }
+  from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.fade-up { animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.fade-up { animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-up { animation: none; }
+  .section { transition: none; }
+}

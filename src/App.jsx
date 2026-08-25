@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
+import heroArtwork from './assets/wedding-oil-painting.jpeg'
 
 // ── 여기를 수정하세요 ──────────────────────────────────────────
 const INFO = {
@@ -74,7 +75,7 @@ function Lightbox({ src, onClose }) {
 }
 
 function Divider() {
-  return <div className="divider"><span>✦</span></div>
+  return <div className="divider"><span>✿</span></div>
 }
 
 function Countdown({ dateStr }) {
@@ -132,6 +133,7 @@ export default function App() {
 
       {/* ── HERO ── */}
       <section className="hero">
+        <img className="hero-artwork" src={heroArtwork} alt="꽃밭에 앉아 입맞추는 신랑 신부의 유화 일러스트" />
         <div className="hero-inner fade-up">
           <p className="hero-eyebrow">We are getting married</p>
           <h1 className="hero-names">
